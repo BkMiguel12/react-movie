@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { API_URL_IMAGE } from '../../utils/constants';
 
 import { Carousel, Button } from 'antd';
 
@@ -38,7 +39,6 @@ function Movie(props) {
 
     const { movie: { id, backdrop_path, title, overview } } = props;
 
-    const API_URL_IMAGE = 'https://image.tmdb.org/t/p/original/';
     const backdrop_movie = `${API_URL_IMAGE}${backdrop_path}`;
     
     return(

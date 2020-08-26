@@ -1,0 +1,38 @@
+.movies-list {
+    border: 1px solid #001628 !important;
+    margin: 40px auto !important;
+    width: 80%;
+
+    .ant-list-header{
+        background-color: #001628;
+        text-align: center;
+
+        h2{
+            color: #fff;
+            margin: 0;
+        }
+    }
+
+    .ant-list-items{
+        height: 70vh;
+        overflow-y: scroll;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    &__movie_item{
+        .ant-list-item-meta{
+            align-items: center;
+
+            .ant-avatar{
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .ant-list-item-meta-title{
+            margin: 0;
+            font-size: 17px;
+        }
+    }
+}
