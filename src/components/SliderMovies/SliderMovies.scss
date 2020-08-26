@@ -1,0 +1,35 @@
+.slider_movies{
+    &__movie {
+        height: 55vh;
+        background-repeat: no-repeat;
+        background-position-y: top;
+        background-position-x: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &__movie-info{
+        text-align: center;
+        color: #252525 !important;
+        background-color: rgba(185, 185, 185, 0.781);
+        margin-bottom: 40px;
+        padding: 15px 15px 20px 15px;
+        width: 60%;
+
+        h2 {
+            color: #252525;
+            font-size: 26px;
+        }
+        p{
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+        .plus_button{
+            margin-top: 15px;
+        }
+    }
+}
