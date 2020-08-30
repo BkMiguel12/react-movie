@@ -1,13 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { API_KEY, API_URL, API_LANG, API_URL_IMAGE } from '../../utils/constants';
 
 import { Row, Col, Button } from 'antd';
+import { PlayCircleOutlined } from '@ant-design/icons';
 
 import moment from 'moment';
 
 import useFetch from '../../hooks/useFetch';
 import Spinner from '../../components/Spinner';
+import ModalVideo from '../../components/ModalVideo';
 
 import './movie.scss';
 
@@ -60,7 +62,26 @@ function PosterMovie(props) {
 function InfoMovie(props) {
     const { movie_info: { id, title, release_date, overview, genres } } = props;
 
-    console.log(genres);
+    const [isVisibleModal, setIsVisibleModal] = useState(false);
+
+    const video_data = useFetch(`${API_URL}/${id}/videos?api_key=${API_KEY}&language=${API_LANG}`);
+
+    const openModal = () => setIsVisibleModal(true);
+    const closeModal = () => setIsVisibleModal(false);
+
+    const renderButtonTrailer = () => {
+        if( video_data.result ){
+            if( video_data.result.results.length > 0 ){
+                const trailer = video_data.result.results[0];
+                return (
+                    <Fragment>
+                        <Button type="text" onClick={ openModal }><PlayCircleOutlined /> See Trailer</Button>
+                        <ModalVideo videoKey={trailer.key} videoPlatform={trailer.site} isOpen={isVisibleModal} close={closeModal} />
+                    </Fragment>
+                );
+            }
+        }
+    }
 
     return(
         <Fragment>
@@ -68,7 +89,7 @@ function InfoMovie(props) {
                 <h1>
                     { title } <span>{moment(release_date).format('YYYY')}</span>
                 </h1>
-                <Button type="link">See Trailer</Button>
+                { renderButtonTrailer() }
             </div>
 
             <div className="movie__info-content">

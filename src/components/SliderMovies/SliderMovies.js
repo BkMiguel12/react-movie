@@ -20,8 +20,6 @@ export default function SliderMovies(props) {
 
     const { results } = movies.result;
 
-    console.log(results);
-
     return(
         <Carousel className="slider_movies" autoplay>
             {

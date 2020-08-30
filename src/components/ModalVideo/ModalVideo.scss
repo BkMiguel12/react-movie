@@ -1,0 +1,25 @@
+.modal-video{
+    width: 100% !important;
+    height: 100%;
+    padding: 0 !important;
+
+    .ant-modal-content{
+        background-color: #000;
+        height: 100%;
+
+        >button{
+            color: #fff;
+        }
+        .ant-modal-body {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            >div{
+                width: 90% !important;
+                height: 90% !important;
+            }
+        }
+    }
+}

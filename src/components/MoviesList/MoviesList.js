@@ -13,8 +13,6 @@ export default function MoviesList(props) {
 
     const { movies, title } = props;
 
-    console.log(movies);
-
     if( movies.loading || !movies.result ){
         return <Spinner />;
     }
