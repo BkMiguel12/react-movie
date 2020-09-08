@@ -29,7 +29,7 @@ export default function Movie() {
 }
 
 function RenderMovie(props) {
-    const { movieInfo: { title, backdrop_path, poster_path } } = props;
+    const { movieInfo: { backdrop_path, poster_path } } = props;
 
     const backdrop_img = `${API_URL_IMAGE}${backdrop_path}`;
 
