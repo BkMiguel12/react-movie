@@ -10,7 +10,7 @@ export default function Footer() {
 
     return (
         <Footer className="footer">
-            <p>Made with <span role="img" aria-label="blue-heart">💙</span> by Miguel Mendoza in ReactJs</p>
+            <p>Made with <span role="img" aria-label="blue-heart">💙</span> &nbsp;by Miguel Mendoza in ReactJs</p>
         </Footer>
     )
 }

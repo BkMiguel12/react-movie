@@ -1,0 +1,15 @@
+.search{
+    margin-bottom: 40px;
+
+    h1{
+        text-align: center;
+        font-size: 40px;
+        margin-top: 15px;
+    }
+
+    &__input{
+        font-size: 30px !important;
+        border-radius: 50px !important;
+        text-align: center;
+    }
+}
